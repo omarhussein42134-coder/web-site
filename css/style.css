@@ -1,0 +1,358 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Inter', sans-serif;
+}
+
+:root {
+    --main-color: #00ff84;
+    --bg-color: #121212;
+    --bg-card: #1a1a1a;
+    --white-color: #ffffff;
+    --black-color: #000000;
+    --border-color: #333333;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--white-color);
+    overflow-x: hidden;
+}
+
+.container {
+    width: 80%;
+    max-width: 1500px;
+    margin: auto;
+}
+
+img {
+    width: 100%;
+}
+
+section {
+    padding: 80px 0;
+}
+.bg-lines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.bg-lines span {
+    position: absolute;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    animation: left-right 18s ease-in-out infinite alternate;
+}
+
+.bg-lines span:nth-child(1) { left: 10%; }
+.bg-lines span:nth-child(2) { left: 20%; }
+.bg-lines span:nth-child(3) { left: 30%; }
+.bg-lines span:nth-child(4) { left: 40%; }
+.bg-lines span:nth-child(5) { left: 50%; }
+.bg-lines span:nth-child(6) { left: 60%; }
+.bg-lines span:nth-child(7) { left: 70%; }
+.bg-lines span:nth-child(8) { left: 80%; }
+.bg-lines span:nth-child(9) { left: 90%; }
+
+@keyframes left-right {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(-100px); }
+    100% { transform: translateX(0); }
+}
+
+/* Buttons */
+.btn {
+    background-color: var(--main-color);
+    color: var(--black-color);
+    padding: 14px 30px;
+    border-radius: 10px;
+    font-weight: 600;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+}
+
+.btn-bg {
+    color: var(--white-color);
+    text-decoration: underline;
+    transition: 0.3s;
+}
+
+.btn-bg:hover {
+    color: var(--main-color);
+}
+
+/* Header */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: 0.3s;
+}
+
+header.active {
+    background-color: var(--black-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+}
+
+header nav .logo img {
+    width: 150px;
+}
+
+header nav .nav-links {
+    display: flex;
+    gap: 40px;
+}
+
+header nav .nav-links a {
+    color: var(--white-color);
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+header nav .nav-links a:hover,
+header nav .nav-links a.active {
+    color: var(--main-color);
+}
+
+header nav .icons {
+    display: flex;
+    gap: 30px;
+}
+
+header nav .icons a {
+    color: var(--main-color);
+    font-size: 24px;
+    transition: 0.3s;
+}
+
+.close-menu, .logo-menu, .icon-menu {
+    display: none;
+}
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hero .text {
+    width: 50%;
+}
+
+.hero .text h4 {
+    color: var(--main-color);
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.hero .text h1 {
+    font-size: 70px;
+    margin-bottom: 15px;
+}
+
+.hero .text h3 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.hero .text p {
+    color: #ccc;
+    font-size: 18px;
+    line-height: 1.8;
+    margin-bottom: 40px;
+}
+
+.hero .hero-img {
+    width: 40%;
+    position: relative;
+}
+
+/* About */
+.about .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--bg-card);
+    border-radius: 10px;
+    padding: 50px;
+}
+
+.about .text {
+    width: 50%;
+}
+
+.about .text ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 0;
+    margin: 20px 0;
+}
+
+.about .text ul li {
+    width: 50%;
+}
+
+.about .text ul li i {
+    color: var(--main-color);
+    margin-right: 10px;
+}
+
+.about .about-img {
+    width: 45%;
+}
+.top-section {
+    text-align: center;
+    margin-bottom: 50px;
+}
+.top-section h2 {
+    font-size: 35px;
+}
+
+.top-section h2 span {
+    color: var(--main-color);
+}
+
+.services .boxes {
+    display: flex;
+    justify-content: space-between;
+}
+
+.services .box {
+    width: 30%;
+    text-align: center;
+    padding: 50px 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.services .box i {
+    color: var(--main-color);
+    font-size: 70px;
+    margin-bottom: 30px;
+}
+
+.services .box:hover {
+    border-color: var(--main-color);
+}
+
+/* Projects */
+.project-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.project-box img {
+    width: 45%;
+    border-radius: 10px;
+}
+
+.project-box .text {
+    width: 50%;
+}
+
+.project-box-2 {
+    flex-direction: row-reverse;
+}
+
+/* Contact */
+.contact .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact .social-contact {
+    width: 30%;
+}
+
+.contact form {
+    width: 60%;
+}
+
+.contact form .inputs {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contact form .inputs input,
+.contact form textarea {
+    width: 100%;
+    background-color: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    border-radius: 5px;
+    color: var(--white-color);
+    margin-bottom: 30px;
+    outline: none;
+}
+
+.contact form .inputs input {
+    width: 48%;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+    header nav .nav-links {
+        position: fixed;
+        top: 0;
+        left: -400px;
+        width: 400px;
+        height: 100vh;
+        background-color: var(--bg-card);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transition: 0.3s;
+    }
+    header nav .nav-links.active {
+        left: 0;
+    }
+    .close-menu, .icon-menu {
+        display: block;
+        font-size: 28px;
+        cursor: pointer;
+    }
+    .hero .container, .about .container, .project-box, .project-box-2 {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero .text, .hero .hero-img, .about .text, .about .about-img, .services .box, .project-box img, .project-box .text, .contact .social-contact, .contact form {
+        width: 100%;
+    }
+}
